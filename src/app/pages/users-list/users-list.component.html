@@ -1,9 +1,15 @@
 <div class="container">
   <div class="row">
-    @for (user of arrUsuarios; track user._id) {
+    @for (user of arrUsuarios | paginate:{ itemsPerPage: pageSize, currentPage:
+    page}; track user._id) {
     <article class="col-3">
       <app-users-card [miUser]="user"></app-users-card>
     </article>
     }
   </div>
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="handlePageChange($event)"
+  ></pagination-controls>
 </div>

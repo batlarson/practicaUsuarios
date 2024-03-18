@@ -6,40 +6,64 @@
       <input
         class="form-control mb-2"
         type="text"
+        placeholder="Introduzca nombre de usuario"
         id="nombre"
         formControlName="nombre"
       />
+      @if (checkControl("nombre", "required")) {
+      <p class="error">Campo requerido</p>
+      } @if (checkControl("nombre", "minlength")) {
+      <p class="error">El campo tiene que tener minimo 2 caracteres</p>
+      }
     </div>
     <div>
       <label class="form-label" for="apellido">Apellido Usuario</label>
       <input
         class="form-control mb-2"
         type="text"
+        placeholder="Introduzca apellido de usuario"
         id="apellido"
         formControlName="apellido"
       />
+      @if (checkControl("apellido", "required")) {
+      <p class="error">Campo requerido</p>
+      } @if (checkControl("apellido", "minlength")) {
+      <p class="error">El campo tiene que tener minimo 2 caracteres</p>
+      }
     </div>
     <div>
       <label class="form-label" for="email">Email Usuario</label>
       <input
         class="form-control mb-2"
         type="email"
+        placeholder="Introduzca email de usuario"
         id="email"
         formControlName="email"
       />
+      @if (checkControl("email", "required")) {
+      <p class="error">Campo requerido</p>
+      } @if (checkControl("email", "pattern")) {
+      <p class="error">No ha metido un email</p>
+      }
     </div>
     <div>
       <label class="form-label" for="imagen">Imagen Usuario</label>
       <input
         class="form-control mb-2"
         type="text"
+        placeholder="Introduzca url de foto de usuario"
         id="imagen"
         formControlName="imagen"
       />
+      @if (checkControl("imagen", "required")) {
+      <p class="error">Campo requerido</p>
+      } @if (checkControl("imagen", "pattern")) {
+      <p class="error">No ha metido un link de internet para su imagen</p>
+      }
     </div>
     <input
       type="submit"
-      value="Enviar"
+      value="{{ inputValue }}"
       [disabled]="!usuariosForm.valid"
       class="btn btn-success mt-3"
     />
