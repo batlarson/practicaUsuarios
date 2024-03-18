@@ -27,5 +27,20 @@ export class UsuariosService {
     );
   }
 
+  insert(formValue: IUsuario): Promise<IUsuario> {
+    return lastValueFrom(
+      this.httpClient.post<IUsuario>(this.linkUsuarios, formValue)
+    );
+  }
+
+  update(formValue: IUsuario): Promise<IUsuario> {
+    return lastValueFrom(
+      this.httpClient.put<IUsuario>(
+        `${this.linkUsuarios}/${formValue._id}`,
+        formValue
+      )
+    );
+  }
+
   constructor() {}
 }

@@ -1,6 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { UsuariosService } from '../../services/usuarios.service';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { UserViewComponent } from '../../pages/user-view/user-view.component';
 
 @Component({
@@ -13,6 +13,8 @@ import { UserViewComponent } from '../../pages/user-view/user-view.component';
 export class BotonesUserComponent {
   @Input() idUsuario: string | undefined = '';
   usuariosService = inject(UsuariosService);
+  router = inject(Router);
+  activatedRoute = inject(ActivatedRoute);
 
   async borrarUsuario(id: string | undefined) {
     if (id !== undefined) {
@@ -23,6 +25,7 @@ export class BotonesUserComponent {
         let response = await this.usuariosService.delete(id);
         if (response.id) {
           alert('Se ha borrado correctamente el usuario ' + response._id);
+          this.router.navigate(['/home']);
         }
       }
     }
