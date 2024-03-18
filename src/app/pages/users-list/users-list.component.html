@@ -1,7 +1,9 @@
-<div class="row">
-  @for (user of arrUsuarios; track user._id) {
-  <article class="col-12 cold-md-6 col-lg-4">
-    <app-users-card></app-users-card>
-  </article>
-  }
+<div class="container">
+  <div class="row">
+    @for (user of arrUsuarios; track user._id) {
+    <article class="col-3">
+      <app-users-card [miUser]="user"></app-users-card>
+    </article>
+    }
+  </div>
 </div>

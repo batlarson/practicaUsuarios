@@ -15,5 +15,17 @@ export class UsuariosService {
     return lastValueFrom(this.httpClient.get<IResponse>(this.linkUsuarios));
   }
 
+  getById(_id: string): Promise<IUsuario> {
+    return lastValueFrom(
+      this.httpClient.get<IUsuario>(`${this.linkUsuarios}/${_id}`)
+    );
+  }
+
+  delete(_id: string): Promise<IUsuario> {
+    return lastValueFrom(
+      this.httpClient.delete<IUsuario>(`${this.linkUsuarios}/${_id}`)
+    );
+  }
+
   constructor() {}
 }

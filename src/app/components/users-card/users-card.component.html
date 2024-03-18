@@ -1,16 +1,18 @@
 <div class="card mb-3">
-  <div class="row g-0">
-    <div class="col-md-4">
+  <div class="column">
+    <div class="col-md-8 mx-auto mt-3">
       <img
         [src]="miUser.image"
-        class="img-fluid rounded-start"
+        class="img-fluid rounded-circle"
         [alt]="miUser.first_name"
       />
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{ nombre }}</h5>
-        <!-- <app-botonera [parent]="'card'" [idUser]="miUser._id"></app-botonera> -->
+        <h5 class="card-title">
+          {{ miUser.first_name }} {{ miUser.last_name }}
+        </h5>
+        <app-iconos-users [idUsuario]="miUser._id"></app-iconos-users>
       </div>
     </div>
   </div>

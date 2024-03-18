@@ -13,12 +13,14 @@ import { UsersCardComponent } from '../../components/users-card/users-card.compo
 })
 export class UsersListComponent {
   usuariosService = inject(UsuariosService);
-  objetoRespuesta: any = [];
-  arrUsuarios: IUsuario[] = [this.objetoRespuesta];
+  data: any = [];
+  arrUsuarios: IUsuario[] = [];
 
   async ngOnInit(): Promise<any> {
     try {
-      this.objetoRespuesta = await this.usuariosService.getAll();
+      this.data = await this.usuariosService.getAll();
+      this.arrUsuarios = this.data.results;
+      console.log(this.data.results);
     } catch (err) {}
   }
 }

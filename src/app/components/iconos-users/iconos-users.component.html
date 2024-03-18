@@ -1,0 +1,33 @@
+<div class="container d-flex gap-3">
+  <div class="justify-content-center">
+    <a class="btn btn-light" [routerLink]="['/user', idUsuario]">
+      <img
+        src="assets\images\magnifier_icon-icons.com_56922.svg"
+        alt="lupa"
+        class="img-fluid"
+      />
+      Detalles
+    </a>
+  </div>
+  <div class="justify-content-center">
+    <a class="btn btn-light" [routerLink]="['/user', idUsuario]">
+      <img
+        src="assets\images\2849811-arrows-interface-media-multimedia-refresh_107975.svg"
+        alt="actualizar"
+        class="img-fluid"
+      />
+      Actualizar
+    </a>
+  </div>
+  <div>
+    <button class="btn btn-light text-align-center">
+      <img
+        src="assets\images\garbagecontainer_118409.svg"
+        alt="papelera"
+        class="img-fluid"
+        (click)="borrarUsuario(idUsuario)"
+      />
+      Borrar
+    </button>
+  </div>
+</div>
