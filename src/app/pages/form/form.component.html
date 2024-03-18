@@ -1,0 +1,48 @@
+<section>
+  <h3>{{ tipo }} USUARIO</h3>
+  <form [formGroup]="usuariosForm">
+    <!-- (ngSubmit)="getDataForm()" -->
+    <div>
+      <label class="form-label" for="name">Nombre Usuario</label>
+      <input
+        class="form-control"
+        type="text"
+        id="name"
+        formControlName="name"
+      />
+    </div>
+    <div>
+      <label class="form-label" for="apellido">Apellido Usuario</label>
+      <input
+        class="form-control"
+        type="text"
+        id="apellido"
+        formControlName="apellido"
+      />
+    </div>
+    <div>
+      <label class="form-label" for="email">Email Usuario</label>
+      <input
+        class="form-control"
+        type="email"
+        id="email"
+        formControlName="email"
+      />
+    </div>
+    <div>
+      <label class="form-label" for="imagen">Imagen Usuario</label>
+      <input
+        class="form-control"
+        type="text"
+        id="imagen"
+        formControlName="imagen"
+      />
+    </div>
+    <input
+      type="submit"
+      value="Enviar"
+      [disabled]="!usuariosForm.valid"
+      class="btn btn-success mt-3"
+    />
+  </form>
+</section>

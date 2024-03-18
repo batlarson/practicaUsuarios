@@ -1,0 +1,20 @@
+<div class="container d-flex gap-3">
+  <div>
+    <button
+      class="btn btn-light text-align-center"
+      (click)="borrarUsuario(idUsuario)"
+    >
+      Eliminar
+    </button>
+  </div>
+  <div>
+    <a class="btn btn-light" [routerLink]="['/updateuser', idUsuario]">
+      Actualizar
+    </a>
+  </div>
+  <div>
+    <a class="btn btn-light" [routerLink]="['/home', idUsuario]">
+      Volver a listado
+    </a>
+  </div>
+</div>
